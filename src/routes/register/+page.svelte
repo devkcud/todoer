@@ -10,11 +10,11 @@
 
 <article>
     <form>
-        <h1>Login</h1>
+        <h1>Register</h1>
 
         <section>
             <User />
-            <input type="text" placeholder="Email or Username" id="email-username-input" />
+            <input type="text" placeholder="Email" id="email-input" />
         </section>
 
         <section>
@@ -24,14 +24,17 @@
             <button type="button" on:click={() => (seePassword = !seePassword)}>
                 {#if !seePassword}<Eye />{:else}<EyeDeny />{/if}
             </button>
+        </section>
 
-            <a href="reset" id="reset-password">reset password</a>
+        <section>
+            <Lock />
+            <input type="password" placeholder="Confirm Password" id="confirm-password-input" />
         </section>
 
         <button type="submit" id="continue-button">Continue</button>
     </form>
 
-    <span>Don't have an account? <a href="register">Register</a></span>
+    <span>Already have an account? <a href="login">Login</a></span>
 </article>
 
 <style lang="scss">
@@ -89,18 +92,6 @@
                         cursor: pointer;
                     }
                 }
-            }
-
-            a#reset-password {
-                position: absolute;
-                bottom: -1.5rem;
-                left: 0;
-                color: #868686;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
-                text-decoration-line: underline;
             }
 
             button#continue-button {
