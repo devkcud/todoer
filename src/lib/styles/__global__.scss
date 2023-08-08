@@ -56,3 +56,9 @@ a {
     color: colors.$green;
     font-weight: 700;
 }
+
+p#error {
+    color: colors.$red;
+    text-align: center;
+    font-weight: 500;
+}

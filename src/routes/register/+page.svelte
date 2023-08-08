@@ -2,12 +2,26 @@
     import '$lib/styles/loginregister.scss';
 
     import User from '$lib/icons/User.svelte';
-    import Eye from '$lib/icons/Eye.svelte';
-    import EyeDeny from '$lib/icons/EyeDeny.svelte';
     import Lock from '$lib/icons/Lock.svelte';
 
-    let seePassword = false;
-    $: type = seePassword ? 'text' : 'password';
+    let email: string;
+    let password: string;
+    let confirmPassword: string;
+    let error: string = '';
+
+    function handleAuth() {
+        if (!email || !password || !confirmPassword) {
+            let missing = [];
+
+            if (!email) missing.push('Email');
+            if (!password) missing.push('Password');
+            if (!confirmPassword) missing.push('Confirm Password');
+
+            return (error = `Missing fields: ${missing.join(', ')}`);
+        }
+
+        error = '';
+    }
 </script>
 
 <article>
@@ -16,25 +30,30 @@
 
         <section>
             <User />
-            <input type="text" placeholder="Email" id="email-input" />
+            <input bind:value={email} type="text" placeholder="Email" id="email-input" />
         </section>
 
         <section>
             <Lock />
-            <input {type} placeholder="Password" id="password-input" />
-
-            <button type="button" on:click={() => (seePassword = !seePassword)}>
-                {#if !seePassword}<Eye />{:else}<EyeDeny />{/if}
-            </button>
+            <input bind:value={password} placeholder="Password" id="password-input" />
         </section>
 
         <section>
             <Lock />
-            <input type="password" placeholder="Confirm Password" id="confirm-password-input" />
+            <input
+                bind:value={confirmPassword}
+                type="password"
+                placeholder="Confirm Password"
+                id="confirm-password-input"
+            />
         </section>
 
-        <button type="submit" id="continue-button">Continue</button>
+        <button on:click={handleAuth} type="submit" id="continue-button">Continue</button>
+
+        {#if error !== ''}
+            <p id="error" style="margin-top: 1rem">{error}</p>
+        {/if}
     </form>
 
-    <span>Already have an account? <a href="login">Login</a></span>
+    <footer>Already have an account? <a href="login">Login</a></footer>
 </article>
