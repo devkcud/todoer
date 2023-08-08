@@ -1,0 +1,29 @@
+@use 'colors';
+
+article {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    p {
+        &:first-of-type {
+            color: colors.$red;
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        &:last-of-type {
+            font-size: 20px;
+
+            span {
+                font-style: italic;
+                color: colors.$fnt-color-dimmed;
+            }
+        }
+    }
+}
+
+span#page-status {
+    color: colors.$red;
+}
