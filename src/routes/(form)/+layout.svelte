@@ -1,6 +1,4 @@
 <script lang="ts">
-    import '$lib/styles/__global__.scss';
-
     import GitHub from '$lib/icons/GitHub.svelte';
 </script>
 
