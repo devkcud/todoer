@@ -1,0 +1,58 @@
+@use 'colors';
+
+header {
+    width: 100%;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 16px;
+
+    a {
+        color: #868686;
+        font-weight: 400;
+    }
+}
+
+main {
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #04060c 0%, #0f1421 100%);
+    color: #ffffff;
+}
+
+h1 {
+    color: colors.$fnt-color;
+
+    font-size: 5rem;
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+button {
+    background: none;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+a {
+    color: colors.$green;
+    font-weight: 700;
+}
