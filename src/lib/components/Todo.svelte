@@ -20,17 +20,9 @@
 
 <div bind:this={todoItem} class="todo-item">
     <div style="display: flex; gap: 1rem;">
-        {#if done}
-            <CircleFilled on:click={toggleDone} />
-        {:else}
-            <CircleOutline on:click={toggleDone} />
-        {/if}
-
+        {#if done}<CircleFilled on:click={toggleDone} />{:else}<CircleOutline on:click={toggleDone} />{/if}
         <h2>{title}</h2>
     </div>
 
-    <div class="control">
-        <Edit />
-        <Cross on:click={() => todoItem.remove()} />
-    </div>
+    <Cross on:click={() => todoItem.remove()} />
 </div>
