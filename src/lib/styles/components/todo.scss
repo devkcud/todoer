@@ -4,7 +4,7 @@ div.todo-item {
     width: 500px;
 
     display: inline-flex;
-    gap: 1rem;
+    justify-content: space-between;
 
     padding: 2rem;
     margin-bottom: 1rem;
@@ -13,6 +13,15 @@ div.todo-item {
     background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
 
     transition: all 0.5s;
+
+    svg:hover {
+        cursor: pointer;
+    }
+
+    div.control {
+        display: flex;
+        gap: 1rem;
+    }
 
     &.done {
         background: linear-gradient(90deg, rgba(44, 141, 36, 0.2) 0%, rgba(44, 141, 36, 0) 100%);
