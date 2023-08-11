@@ -1,11 +1,20 @@
 <script lang="ts">
     import Todo from '$lib/components/Todo.svelte';
-import Add from '$lib/icons/Add.svelte';
+    import Add from '$lib/icons/Add.svelte';
     import Door from '$lib/icons/Door.svelte';
     import Gear from '$lib/icons/Gear.svelte';
     import UserRounded from '$lib/icons/UserRounded.svelte';
 
     import '$lib/styles/demo.scss';
+
+    $: todos = [] as string[];
+    let todoTitle: string;
+
+    function addTodo() {
+        if (todoTitle === undefined || todoTitle === '') return;
+        todos = [...todos, todoTitle];
+        todoTitle = '';
+    }
 </script>
 
 <header>
@@ -38,12 +47,13 @@ import Add from '$lib/icons/Add.svelte';
     <h1>Todos</h1>
 
     <div id="create-todo">
-        <input type="text" placeholder="What to be done?" />
-        <Add />
+        <input bind:value={todoTitle} type="text" placeholder="What to be done?" />
+        <Add on:click={() => addTodo()} />
     </div>
 
     <ul id="todos">
-        <Todo title="Todo test" />
-        <Todo title="Todo test" />
+        {#each todos as todo}
+            <Todo title={todo} />
+        {/each}
     </ul>
 </section>
