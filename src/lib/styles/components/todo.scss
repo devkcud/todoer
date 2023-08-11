@@ -1,0 +1,25 @@
+@use '../colors';
+
+div.todo-item {
+    width: 500px;
+
+    display: inline-flex;
+    gap: 1rem;
+
+    padding: 2rem;
+    margin-bottom: 1rem;
+
+    border-radius: 10px 0px 0px 10px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+
+    transition: all 0.5s;
+
+    &.done {
+        background: linear-gradient(90deg, rgba(44, 141, 36, 0.2) 0%, rgba(44, 141, 36, 0) 100%);
+        color: colors.$fnt-color-dimmed;
+
+        h2 {
+            text-decoration-line: line-through;
+        }
+    }
+}

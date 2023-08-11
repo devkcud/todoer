@@ -1,0 +1,94 @@
+@use 'colors';
+
+header {
+    display: flex;
+    align-items: center;
+
+    gap: 1rem;
+
+    img {
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 36px;
+        font-weight: 400;
+    }
+
+    section > nav {
+        display: flex;
+        gap: 20px;
+    }
+}
+
+section#body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div#create-todo {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+
+        border-bottom: 1px solid colors.$white;
+
+        padding-block: 1rem;
+
+        svg {
+            height: 30px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        input {
+            height: 50px;
+
+            border: none;
+            outline: none;
+            background: none;
+            color: colors.$fnt-color;
+
+            font-size: 24px;
+        }
+    }
+}
+
+ul#todos {
+    margin-top: 2rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+a.button {
+    width: 140px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    padding: 10px;
+    border-radius: 10px;
+
+    background: colors.$bg-secondary;
+    color: colors.$fnt-color;
+
+    transition: all 0.2s ease-in-out;
+
+    &.logout {
+        font-weight: 700;
+        color: colors.$red;
+    }
+
+    &:hover {
+        filter: brightness(150%);
+        background: colors.$bg-main;
+    }
+}

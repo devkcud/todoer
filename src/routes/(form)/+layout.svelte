@@ -12,3 +12,12 @@
 <main>
     <slot />
 </main>
+
+<style>
+    header {
+        position: absolute;
+
+        display: flex;
+        justify-content: space-between;
+    }
+</style>

@@ -3,10 +3,7 @@
 header {
     width: 100%;
 
-    position: absolute;
-
-    display: flex;
-    justify-content: space-between;
+    position: relative;
 
     padding: 16px;
 
@@ -52,6 +49,7 @@ button {
     }
 }
 
+.bold-green,
 a {
     color: colors.$green;
     font-weight: 700;
