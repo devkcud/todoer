@@ -5,8 +5,6 @@
     import Gear from '$lib/icons/Gear.svelte';
     import UserRounded from '$lib/icons/UserRounded.svelte';
 
-    import '$lib/styles/demo.scss';
-
     $: todos = [] as string[];
     let todoTitle: string;
 

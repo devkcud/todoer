@@ -3,7 +3,6 @@
     import Eye from '$lib/icons/Eye.svelte';
     import EyeDeny from '$lib/icons/EyeDeny.svelte';
 
-    import '$lib/styles/demo.scss';
     import '$lib/styles/account.scss';
 
     function getDate() {
@@ -40,7 +39,7 @@
     </a>
 </header>
 
-<session id="account-info">
+<section id="account-info">
     <img
         src="https://placehold.co/256"
         alt="Placeholder with the geometry 256x256 to be used in profile in demo (not clickable)"
@@ -65,4 +64,4 @@
             {/if}
         </div>
     </div>
-</session>
+</section>
