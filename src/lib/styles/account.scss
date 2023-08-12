@@ -1,0 +1,27 @@
+session#account-info {
+    height: 70vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    img {
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.25rem;
+    }
+
+    div#email-place {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

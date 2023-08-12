@@ -2,7 +2,6 @@
     import CircleFilled from '$lib/icons/CircleFilled.svelte';
     import CircleOutline from '$lib/icons/CircleOutline.svelte';
     import Cross from '$lib/icons/Cross.svelte';
-    import Edit from '$lib/icons/Edit.svelte';
 
     import '$lib/styles/components/todo.scss';
 
